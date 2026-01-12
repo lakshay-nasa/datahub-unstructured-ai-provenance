@@ -2,7 +2,7 @@
 
 A connector tool that bridges Unstructured.io (File Ingestion) with DataHub (Metadata Governance) to enforce safety in RAG pipelines.
 
-![Architecture Diagram](https://raw.githubusercontent.com/datahub-project/static-assets/main/imgs/datahub-architecture-diagram.png)
+![Architecture Diagram](assets/datahub-unstructured-architecture.png)
 
 ## 🔌 What is this tool?
 
