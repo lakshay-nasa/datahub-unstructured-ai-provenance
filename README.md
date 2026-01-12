@@ -1,7 +1,6 @@
 # DataHub + Unstructured: AI Provenance & Governance Orchestrator 🌱
 
-A connector tool that bridges Unstructured.io (File Ingestion) with DataHub (Metadata Governance) to enforce safety in RAG pipelines.
-
+A connector tool that bridges [Unstructured.io](https://unstructured.io/) (File Ingestion) with [DataHub](https://datahub.com/) (Metadata Governance) to enforce safety in RAG pipelines.
 ![Architecture Diagram](assets/datahub-unstructured-architecture.png)
 
 ## 🔌 What is this tool?
