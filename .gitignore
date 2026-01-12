@@ -1,0 +1,60 @@
+# ==========================================
+#  Python & Virtual Environments
+# ==========================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.dapenv/
+*.egg-info/
+.pytest_cache/
+
+# ==========================================
+#  Security & Secrets (CRITICAL)
+# ==========================================
+.env
+.env.local
+.env.*
+!.env.example
+
+# ==========================================
+#  Project Data & Storage
+# ==========================================
+# 1. Vector Database (ChromaDB)
+chroma_db_storage/
+
+# 2. Source Documents (Input Data)
+data/source/*
+data/processed/*
+!data/source/.gitkeep
+!data/processed/.gitkeep
+
+# 3. Generated Artifacts
+*.pdf
+*.csv
+*.docx
+*.txt
+
+# ==========================================
+#  Logs & System Files
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Mac & Windows Metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================================
+#  IDE & Editor Settings
+# ==========================================
+.vscode/
+.idea/
+*.swp
