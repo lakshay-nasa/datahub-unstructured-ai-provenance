@@ -37,6 +37,37 @@ It performs 4 keys steps:
 4. **Metadata Push (DataHub Integration):** It uses the DataHub SDK (datahub-client) to publish the lineage graph, ownership info, and risk tags immediately. So you have a searchable audit trail.
 5. **Trusted Retrieval (RAG Ready):** With the data now securely isolated in ChromaDB, it is ready for generation. You can connect any LLM (OpenAI, Llama 3, etc.) to these indexes. You can try this out via a verification script `src/test_retrieval.py` to confirm that the AI respects the security boundaries set in Step 3.
 
+## 📂 Project Structure
+
+datahub-unstructured-ai-provenance/
+├── data/
+│   ├── source/               # Landing Zone: Drop raw PDFs/Invoices here
+│   └── images/               # A placeholder for Extracted images (Reserved for Multi-Modal V2)
+│
+├── src/
+│   ├── __init__.py
+│   ├── config.py             # Configuration (DataHub URL, Chroma Settings)
+│   ├── main.py               # Orchestrator: Runs the Load -> Scan -> Route -> Index flow
+│   ├── generate_synthetic_data.py  # Generates fake PDFs with PII (SSNs, Credit Cards)
+│   ├── test_retrieval.py           # Verifies ChromaDB routing (Queries Secure vs Public indices)
+│   │
+│   ├── ingestion/            # MODULE 1: The Input
+│   │   ├── __init__.py
+│   │   ├── loader.py         # Uses Unstructured.io to chunk text & tables
+│   │   └── pii.py            # Uses Presidio to scan chunks for secrets
+│   │
+│   ├── storage/              # MODULE 2: The Vault
+│   │   ├── __init__.py
+│   │   └── vector_store.py   # Wrapper for ChromaDB (Manages Secure vs. Public indices)
+│   │
+│   └── governance/           # MODULE 3: The Map Maker
+│       ├── __init__.py
+│       └── datahub_client.py # Emits Lineage, Risk Tags, and Audit Logs to DataHub
+│
+├── .env                      # Secrets (API Keys, DataHub Tokens)
+├── requirements.txt          # Python Dependencies
+└── README.md                 # Documentation
+
 ## 🛠️ Prerequisites
 
 You need these tools installed to run the show:
