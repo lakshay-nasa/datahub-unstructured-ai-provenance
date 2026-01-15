@@ -39,6 +39,7 @@ It performs 4 keys steps:
 
 ## 📂 Project Structure
 
+```
 datahub-unstructured-ai-provenance/
 ├── data/
 │   ├── source/               # Landing Zone: Drop raw PDFs/Invoices here
@@ -67,6 +68,7 @@ datahub-unstructured-ai-provenance/
 ├── .env                      # Secrets (API Keys, DataHub Tokens)
 ├── requirements.txt          # Python Dependencies
 └── README.md                 # Documentation
+```
 
 ## 🛠️ Prerequisites
 
